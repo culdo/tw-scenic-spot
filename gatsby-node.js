@@ -1,28 +1,4 @@
-const allCity = [
-    "Taipei",
-    "NewTaipei",
-    "Taoyuan",
-    "Taichung",
-    "Tainan",
-    "Kaohsiung",
-    "Keelung",
-    "Hsinchu",
-    "HsinchuCounty",
-    "MiaoliCounty",
-    "ChanghuaCounty",
-    "NantouCounty",
-    "YunlinCounty",
-    "ChiayiCounty",
-    "Chiayi",
-    "PingtungCounty",
-    "YilanCounty",
-    "HualienCounty",
-    "TaitungCounty",
-    "KinmenCounty",
-    "PenghuCounty",
-    "LienchiangCounty"
-];
-exports.allCity = allCity;
+const { allCity } = require("./src/components/const")
 
 exports.createPages = async ({
     actions: {

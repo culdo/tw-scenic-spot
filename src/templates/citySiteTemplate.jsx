@@ -14,13 +14,13 @@ class CityListComponent extends React.Component {
             skip: 0
         };
     }
-    
+
     // get motc data
     fetchMoreData = () => {
         axios.get(`https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot/${this.props.twCity}?$top=${this.state.top}&$skip=${this.state.skip}&$format=JSON
         `).then(
             (response) => {
-                if (response.data.length == 0) {
+                if (response.data.length === 0) {
                     this.setState({ hasMore: false });
                     return;
                 }
@@ -30,7 +30,11 @@ class CityListComponent extends React.Component {
                     skip: this.state.skip + 30
                 });
             }
-        )
+        ).catch((error) => {
+            if (error.response.status===429) { 
+                this.setState({ hasMore: false })
+            }
+        })
     };
 
     componentDidMount() {
@@ -62,7 +66,7 @@ class CityListComponent extends React.Component {
                             </h2>
                             <p>
                                 簡介：
-                                <br/>
+                                <br />
                                 {item.Description ? item.Description : '無'}
                             </p>
                         </div>
@@ -73,6 +77,6 @@ class CityListComponent extends React.Component {
 
     }
 }
-export default ({ pageContext: { city } }) => (
-    <CityListComponent twCity={city} />
-);
+export default function CityList({ pageContext: { city } }) {
+    return <CityListComponent twCity={city} />
+}
