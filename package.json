@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "Taiwan scenic spot web app",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "React app of taiwan scenic spot",
   "version": "0.1.0",
-  "license": "0BSD",
+  "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -17,7 +17,8 @@
   "dependencies": {
     "gatsby": "^3.0.1",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-infinite-scroll-component": "^6.0.0"
   },
   "devDependencies": {
     "prettier": "2.2.1"

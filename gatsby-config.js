@@ -5,6 +5,9 @@
  */
 
 module.exports = {
-  pathPrefix: "/hello-world-gatsbyjs",
+  siteMetadata: {
+    title: `Taiwan Scenic Spot Web App`,
+  },
+  pathPrefix: "/tw-scenic-spot",
   plugins: [],
 }
