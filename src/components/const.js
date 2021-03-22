@@ -24,3 +24,4 @@ exports.allCity = {
       LienchiangCounty: "連江縣"
 };
 
+exports.API_ITEM_LIMIT = 30;

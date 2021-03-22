@@ -2,6 +2,7 @@ import React from "react"
 import axios from "axios"
 import InfiniteScroll from "react-infinite-scroll-component";
 import Layout from "../components/layout";
+import API_ITEM_LIMIT from "../components/const"
 
 class CityListComponent extends React.Component {
     constructor(props) {
@@ -11,7 +12,7 @@ class CityListComponent extends React.Component {
             items: [],
             hasMore: true,
             errorMsg: "",
-            top: 30,
+            top: API_ITEM_LIMIT,
             skip: 0
         };
     }
@@ -27,8 +28,8 @@ class CityListComponent extends React.Component {
                 }
                 this.setState({
                     items: this.state.items.concat(response.data),
-                    top: this.state.top + 30,
-                    skip: this.state.skip + 30
+                    top: this.state.top + API_ITEM_LIMIT,
+                    skip: this.state.skip + API_ITEM_LIMIT
                 });
             }
         ).catch((error) => {
