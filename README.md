@@ -8,6 +8,7 @@
   Taiwan Scenic Spot Web APP
 </h1>
 
+You can try it on [the demo site](https://culdo.github.io/tw-scenic-spot)!
 
 ## 🚀 Quick start
 
@@ -50,8 +51,10 @@
 
 1.  **`/.github`**: This directory contains `Github Action` CI CD config file.
 2.  **`/src`**: This directory contains all of the code develop using Gatsby Framework.
-3.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.com/docs/gatsby-config/) for more detail).
-4.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.com/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+3.  **`const.js`**: This file contains a object of all city name of taiwan.
+4.  **`layout.js`**: This file contains a common header of all pages.
+6.  **`citySiteTemplate.jsx`**: This file is used to generate infinite scroll of all scenic spots.
+3.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. I specify the site title and site prefix path.(Check out the [config docs](https://www.gatsbyjs.com/docs/gatsby-config/) for more detail).
+4.  **`gatsby-node.js`**: This file is used to generate routes of all city and all-spot pages.
 ## 💫 Deploy
-
 This site deployed on github page using `Github Action` CI CD.
