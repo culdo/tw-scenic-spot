@@ -10,6 +10,7 @@ class CityListComponent extends React.Component {
         this.state = {
             items: [],
             hasMore: true,
+            errorMsg: "",
             top: 30,
             skip: 0
         };
@@ -31,8 +32,11 @@ class CityListComponent extends React.Component {
                 });
             }
         ).catch((error) => {
-            if (error.response.status===429) { 
-                this.setState({ hasMore: false })
+            this.setState({ hasMore: false})
+            if (error.response) {
+                this.setState({ errorMsg: error.response.statusText })
+            } else {
+                this.setState({ errorMsg: error.toString() })
             }
         })
     };
@@ -55,7 +59,7 @@ class CityListComponent extends React.Component {
                     loader={<h4>Loading...</h4>}
                     endMessage={
                         <p style={{ textAlign: "center" }}>
-                            <b>Yay! You have seen it all</b>
+                            <b>{this.state.errorMsg ? this.state.errorMsg : "Yay! You have seen it all"}</b>
                         </p>
                     }>
 

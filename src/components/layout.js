@@ -5,15 +5,9 @@ import { allCity } from "../components/const"
 export default function Layout({ children }) {
   return (
     <div>
-      <Link to={`/scenicSpot`}>
-        <h3>
-          全部景點列表
-        </h3>
-      </Link>
-
-      {allCity.map((city) =>(
-        <Link to={`/scenicSpot/${city}`}>
-          <h3>{city}</h3>
+      {Object.keys(allCity).map((page) =>(
+        <Link to={`/scenicSpot/${page === "All" ? "" : page}`}>
+          <h3>{allCity[page]}</h3>
         </Link>
         ))}
       <hr/>

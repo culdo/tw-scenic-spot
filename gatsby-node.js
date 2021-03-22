@@ -5,21 +5,12 @@ exports.createPages = async ({
         createPage
     }
 }) => {
-    
-    createPage({
-        path: `/scenicSpot`,
-        component: require.resolve('./src/templates/citySiteTemplate.jsx'),
-        context: {
-            city: "",
-        },
-
-    })
-    allCity.forEach((city) => {
+    Object.keys(allCity).map((page) => {
         createPage({
-            path: `/scenicSpot/${city}`,
+            path: `/scenicSpot/${ page === "All" ? "" : page}`,
             component: require.resolve('./src/templates/citySiteTemplate.jsx'),
             context: {
-                city
+                city: allCity[page]
             },
 
         })
