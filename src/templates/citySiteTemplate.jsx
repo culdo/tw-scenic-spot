@@ -2,7 +2,7 @@ import React from "react"
 import axios from "axios"
 import InfiniteScroll from "react-infinite-scroll-component";
 import Layout from "../components/layout";
-import API_ITEM_LIMIT from "../components/const"
+import { API_ITEM_LIMIT } from "../components/const"
 
 class CityListComponent extends React.Component {
     constructor(props) {
@@ -19,7 +19,7 @@ class CityListComponent extends React.Component {
 
     // get motc data
     fetchMoreData = () => {
-        axios.get(`https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot/${this.props.twCity}?$top=${this.state.top}&$skip=${this.state.skip}&$format=JSON
+        axios.get(`https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot/${this.props.cityID}?$top=${this.state.top}&$skip=${this.state.skip}&$format=JSON
         `).then(
             (response) => {
                 if (response.data.length === 0) {
@@ -51,7 +51,7 @@ class CityListComponent extends React.Component {
         return (
             <Layout>
                 <h1>
-                    {this.props.twCity}
+                    {this.props.cityName}
                 </h1>
                 <InfiniteScroll
                     dataLength={this.state.items.length}
@@ -64,8 +64,8 @@ class CityListComponent extends React.Component {
                         </p>
                     }>
 
-                    {this.state.items.map((item) => (
-                        <div className="row">
+                    {this.state.items.map((item, i) => (
+                        <div key={i} className="row">
                             <h2>
                                 {item.Name}
                             </h2>
@@ -82,6 +82,6 @@ class CityListComponent extends React.Component {
 
     }
 }
-export default function CityList({ pageContext: { city } }) {
-    return <CityListComponent twCity={city} />
+export default function CityList({ pageContext: { cityID, cityName } }) {
+    return <CityListComponent cityID={cityID} cityName={cityName} />
 }

@@ -6,13 +6,14 @@ exports.createPages = async ({
     }
 }) => {
     Object.keys(allCity).map((page) => {
+        const cityID = page === "All" ? "" : page
         createPage({
-            path: `/scenicSpot/${ page === "All" ? "" : page}`,
+            path: `/scenicSpot/${ cityID }`,
             component: require.resolve('./src/templates/citySiteTemplate.jsx'),
             context: {
-                city: allCity[page]
+                cityID,
+                cityName: allCity[page]
             },
-
         })
     })
 }
