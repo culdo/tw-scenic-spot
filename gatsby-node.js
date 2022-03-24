@@ -1,10 +1,8 @@
 const { allCity } = require("./src/components/const")
 
-exports.createPages = async ({
-    actions: {
-        createPage
-    }
-}) => {
+exports.createPages = ({ actions }) => {
+    const { createPage, createRedirect } = actions
+
     Object.keys(allCity).map((page) => {
         const cityID = page === "All" ? "" : page
         createPage({
@@ -16,4 +14,11 @@ exports.createPages = async ({
             },
         })
     })
+    
+    createRedirect({
+        fromPath: '/',
+        toPath: '/scenicSpot',
+        isPermanent: true,
+        redirectInBrowser: true,
+     })
 }
