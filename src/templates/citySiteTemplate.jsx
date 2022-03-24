@@ -74,8 +74,9 @@ class CityListComponent extends React.Component {
 
                     {this.state.items.map((item, i) => (
                         <div key={i} className="row">
+                            <img src={item.Picture.PictureUrl1}></img>
                             <h2>
-                                {item.Name}
+                                {item.ScenicSpotName}
                             </h2>
                             <p>
                                 簡介：
