@@ -9,5 +9,5 @@ module.exports = {
     title: `Taiwan Scenic Spot Web App`,
   },
   pathPrefix: "/tw-scenic-spot",
-  plugins: [],
+  plugins: [`gatsby-plugin-react-helmet`],
 }

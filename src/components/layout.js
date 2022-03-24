@@ -6,6 +6,7 @@ import * as containerStyles from "./container.module.css"
 export default function Layout({ children }) {
   return (
     <div>
+      
       <div className={containerStyles.container}>
         {Object.keys(allCity).map((page, i) =>(
         <Link key={i} to={`/scenicSpot/${page === "All" ? "" : page}`} className={containerStyles.link}>

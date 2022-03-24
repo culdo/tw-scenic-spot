@@ -3,6 +3,7 @@ import axios from "axios"
 import InfiniteScroll from "react-infinite-scroll-component";
 import Layout from "../components/layout";
 import { API_ITEM_LIMIT } from "../components/const"
+import { Helmet } from "react-helmet"
 
 class CityListComponent extends React.Component {
     constructor(props) {
@@ -50,6 +51,13 @@ class CityListComponent extends React.Component {
     render() {
         return (
             <Layout>
+                <div className="application">
+                    <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>旅遊景點APP：{this.props.cityName}</title>
+                    <link rel="canonical" href="http://mysite.com/example" />
+                    </Helmet>
+                </div>
                 <h1>
                     {this.props.cityName}
                 </h1>
