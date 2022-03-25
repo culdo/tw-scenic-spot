@@ -5,8 +5,9 @@
   </a>
 </p>
 <h1 align="center">
-  Taiwan Scenic Spot Web APP
+  台灣旅遊景點 Web APP
 </h1>
+串接公共運輸整合資訊流通平台之旅遊景點API，呈現於React.js編寫之前端
 
 You can try it on [the demo site](https://culdo.github.io/tw-scenic-spot)!
 
