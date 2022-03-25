@@ -3,7 +3,8 @@ import axios from "axios"
 import InfiniteScroll from "react-infinite-scroll-component";
 import Layout from "../components/layout";
 import { API_ITEM_LIMIT } from "../components/const"
-import { Helmet } from "react-helmet"
+import "../components/style.css"
+import "bootstrap/dist/css/bootstrap.min.css"
 
 class CityListComponent extends React.Component {
     constructor(props) {
@@ -50,17 +51,8 @@ class CityListComponent extends React.Component {
 
     render() {
         return (
-            <Layout>
-                <div className="application">
-                    <Helmet>
-                    <meta charSet="utf-8" />
-                    <title>旅遊景點APP：{this.props.cityName}</title>
-                    <link rel="canonical" href="http://mysite.com/example" />
-                    </Helmet>
-                </div>
-                <h1>
-                    {this.props.cityName}
-                </h1>
+            <Layout cityName={this.props.cityName}>
+                <div className="container">
                 <InfiniteScroll
                     dataLength={this.state.items.length}
                     next={this.fetchMoreData}
@@ -70,22 +62,23 @@ class CityListComponent extends React.Component {
                         <p style={{ textAlign: "center" }}>
                             <b>{this.state.errorMsg ? this.state.errorMsg : "Yay! You have seen it all"}</b>
                         </p>
-                    }>
-
+                    }
+                >
                     {this.state.items.map((item, i) => (
-                        <div key={i} className="row">
-                            <img src={item.Picture.PictureUrl1}></img>
-                            <h2>
+                        <div key={i} className="card text-white bg-primary border-primary mb-3 mycard">
+                            <img className="card-img-top" src={item.Picture.PictureUrl1}></img>
+                            <div className="card-body">
+                            <h2 className="card-title">
                                 {item.ScenicSpotName}
                             </h2>
-                            <p>
-                                簡介：
-                                <br />
+                            <p className="card-text">
                                 {item.Description ? item.Description : '無'}
                             </p>
+                            </div>
                         </div>
                     ))}
                 </InfiniteScroll>
+                </div>
             </Layout>
         )
 

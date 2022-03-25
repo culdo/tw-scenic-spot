@@ -1,5 +1,5 @@
 exports.allCity = {
-      All: "全部景點",
+      All: "全部",
       Taipei: "臺北市",
       NewTaipei: "新北市",
       Taoyuan: "桃園市",

@@ -1,0 +1,45 @@
+.container {
+    flex-wrap:wrap ;
+}
+.link {
+    margin: 3px;
+}
+
+.mycard {
+    width: 50rem;
+    margin: 0 auto;
+}
+
+.sidenav {
+    height: 100%;  
+    width: 15%;  
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
+    left: 0; 
+    background-color:#ffffff; 
+    transition: .5s ease; 
+    overflow-x: hidden; 
+    padding-top: 10px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+}
+
+.mytop-nav-bar{
+    top: 0; 
+    left: 0;
+    height: 7%;  
+    width: 100%;  
+    margin-top: 0;
+    position: fixed; 
+    z-index: 1; 
+    background-color:#ffffff; 
+    display: flex; 
+}
+
+.myclose-bt {
+    margin-top: 0;
+    margin-right: 0.5rem;
+    margin-left: auto;
+}
