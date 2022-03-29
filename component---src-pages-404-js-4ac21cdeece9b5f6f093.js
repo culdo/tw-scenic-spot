@@ -1,0 +1,2 @@
+(self.webpackChunktaiwan_scenic_spot_web_app=self.webpackChunktaiwan_scenic_spot_web_app||[]).push([[883],{9616:function(e,n,t){"use strict";t.r(n),t.d(n,{default:function(){return c}});var a=t(7294),u=t(4252);function c(){return a.createElement(u.Z,null,a.createElement("h1",null,"Page Not Found"),a.createElement("p",null,"Oops, we couldn't find this page!"))}}}]);
+//# sourceMappingURL=component---src-pages-404-js-4ac21cdeece9b5f6f093.js.map

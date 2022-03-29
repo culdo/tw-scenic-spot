@@ -1,0 +1,2 @@
+(self.webpackChunktaiwan_scenic_spot_web_app=self.webpackChunktaiwan_scenic_spot_web_app||[]).push([[678],{7704:function(e,n,t){"use strict";t.r(n),t.d(n,{default:function(){return u}});var a=t(7294),c=t(4252);function u(){return a.createElement(c.Z,null)}}}]);
+//# sourceMappingURL=component---src-pages-index-js-d7205e347d443e4a6bf9.js.map
